@@ -1,0 +1,22 @@
+{
+  "name": "bakery-chatbot",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "DEBUG=starter-code:* nodemon ./bin/www hbs"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cookie-parser": "~1.4.3",
+    "cron": "^1.7.0",
+    "debug": "~2.6.9",
+    "dotenv": "^7.0.0",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0",
+    "nodemon": "^1.18.10"
+  }
+}
