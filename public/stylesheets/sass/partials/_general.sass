@@ -1,0 +1,62 @@
+//----------- GENERAL ------------
+
+html, body
+	height: 100%
+	width: 100%
+	color: $brown
+	background-color: $brown
+	font-family: 'Raleway'
+	padding: 0
+	margin: 0
+
+body
+	+column-flex
+	justify-content: center
+
+.container
+	+column-flex
+	justify-content: flex-start
+	width: 100%
+	height: calc(100% - 20em)
+	background-color: $beig
+	.section
+		width: 100%
+		text-align: center
+		&.headerSection
+			padding: 8em 0
+		&.descriptionSection
+			width: 65%
+			padding: 1em 0
+			font-size: 2.5em
+			p
+				padding: 0.5em 0
+		&.dailySection
+			font-size: 2em
+			padding: 2em 0
+			+column-flex
+			justify-content: center
+			p 
+				padding: 1em 0
+			.dailyDish
+				width: 65%
+				background-color: $orange-light
+				border: 0.5em solid $orange-light
+				border-radius: 1em
+				p
+					text-transform: capitalize
+					font-size: 1.5em
+
+      
+
+.header
+	font-family: 'Kurale'
+	font-size: 5em
+
+p
+	margin: 0
+
+.show
+	display: block
+
+.hide
+	display: none !important

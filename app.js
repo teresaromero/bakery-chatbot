@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Locals
 app.locals.title = "Bakery Bot";
-app.locals.daily = "hola pepe";
+app.locals.daily = "";
 
 //Routes
 app.use("/", indexRouter);
@@ -55,21 +55,22 @@ app.use((err, req, res, next) => {
   res.render("error");
 });
 
-// console.log('Before job instantiation');
-// const getDaily = new CronJob('00 08 20 * * 1-5', () => {
-//   axios
-//     .get(process.env.API)
-//     .then(daily => {
-//       console.log('Daily Recomendation Updated to ',daily.data);
-//       app.locals.daily = daily.data;
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// });
-// console.log('After job instantiation');
-
-
-// getDaily.start()
+//Cron Job for changing daily special
+const getDaily = new CronJob({
+  cronTime: "00 00 00 * * 0-6",
+  onTick: () => {
+    axios
+      .get(process.env.API)
+      .then(daily => {
+        console.log("Daily Recomendation set to ", daily.data);
+        app.locals.daily = daily.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
+  start: true,
+  runOnInit: true
+});
 
 module.exports = app;

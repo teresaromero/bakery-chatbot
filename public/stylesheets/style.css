@@ -1,8 +1,70 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+@import url("https://fonts.googleapis.com/css?family=Kurale");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+/* Color Theme Swatches in Hex */
+html, body {
+  height: 100%;
+  width: 100%;
+  color: #401A17;
+  background-color: #401A17;
+  font-family: 'Raleway';
+  padding: 0;
+  margin: 0; }
 
-a {
-  color: #00B7FF; }
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center; }
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: calc(100% - 20em);
+  background-color: #F2ECE4; }
+  .container .section {
+    width: 100%;
+    text-align: center; }
+    .container .section.headerSection {
+      padding: 8em 0; }
+    .container .section.descriptionSection {
+      width: 65%;
+      padding: 1em 0;
+      font-size: 2.5em; }
+      .container .section.descriptionSection p {
+        padding: 0.5em 0; }
+    .container .section.dailySection {
+      font-size: 2em;
+      padding: 2em 0;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center; }
+      .container .section.dailySection p {
+        padding: 1em 0; }
+      .container .section.dailySection .dailyDish {
+        width: 65%;
+        background-color: #D98D62;
+        border: 0.5em solid #D98D62;
+        border-radius: 1em; }
+        .container .section.dailySection .dailyDish p {
+          text-transform: capitalize;
+          font-size: 1.5em; }
+
+.header {
+  font-family: 'Kurale';
+  font-size: 5em; }
+
+p {
+  margin: 0; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none !important; }
 
 /*# sourceMappingURL=style.css.map */
