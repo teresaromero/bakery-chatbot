@@ -12,6 +12,10 @@ const indexRouter = require("./routes/index");
 const CronJob = require("cron").CronJob;
 const axios = require("axios");
 
+//Redux config for state management
+const store = require("./lib/redux/store");
+const update = require("./lib/redux/actions");
+
 const app = express();
 
 // view engine setup
@@ -34,7 +38,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Locals
 app.locals.title = "Bakery Bot";
-app.locals.daily = "";
 
 //Routes
 app.use("/", indexRouter);
@@ -63,7 +66,7 @@ const getDaily = new CronJob({
       .get(process.env.API)
       .then(daily => {
         console.log("Daily Recomendation set to ", daily.data);
-        app.locals.daily = daily.data;
+        store.dispatch(update(daily.data));
       })
       .catch(err => {
         console.log(err);
@@ -72,5 +75,8 @@ const getDaily = new CronJob({
   start: true,
   runOnInit: true
 });
+
+//Telegram Bot
+require("./telegram/bot");
 
 module.exports = app;
