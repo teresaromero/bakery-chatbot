@@ -77,6 +77,6 @@ const getDaily = new CronJob({
 });
 
 //Telegram Bot
-require("./telegram/bot");
+require("./lib/telegram/bot");
 
 module.exports = app;

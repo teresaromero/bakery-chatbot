@@ -3,68 +3,49 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 /* Color Theme Swatches in Hex */
 html, body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  color: #401A17;
-  background-color: #401A17;
-  font-family: 'Raleway';
+  color: black;
+  background-color: #A45632;
   padding: 0;
+  margin: 0; }
+
+p {
   margin: 0; }
 
 body {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  align-content: center; }
+  body .container {
+    background-color: #F2ECE4;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%; }
+    body .container .section {
+      width: 100%;
+      text-align: center;
+      font-family: Kurale;
+      font-size: 1em; }
+      body .container .section.callAction img {
+        padding: 1em 0;
+        height: 10vh; }
+      body .container .section .dailyDish {
+        text-transform: capitalize;
+        font-size: 1.5em; }
+      body .container .section img {
+        height: 30vh;
+        max-width: 100%; }
 
-.container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: calc(100% - 20em);
-  background-color: #F2ECE4; }
-  .container .section {
-    width: 100%;
-    text-align: center; }
-    .container .section.headerSection {
-      padding: 8em 0; }
-    .container .section.descriptionSection {
-      width: 65%;
-      padding: 1em 0;
-      font-size: 2.5em; }
-      .container .section.descriptionSection p {
-        padding: 0.5em 0; }
-    .container .section.dailySection {
-      font-size: 2em;
-      padding: 2em 0;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      justify-content: center; }
-      .container .section.dailySection p {
-        padding: 1em 0; }
-      .container .section.dailySection .dailyDish {
-        width: 65%;
-        background-color: #D98D62;
-        border: 0.5em solid #D98D62;
-        border-radius: 1em; }
-        .container .section.dailySection .dailyDish p {
-          text-transform: capitalize;
-          font-size: 1.5em; }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .section {
+    font-size: 2.3em !important; } }
 
-.header {
-  font-family: 'Kurale';
-  font-size: 5em; }
-
-p {
-  margin: 0; }
-
-.show {
-  display: block; }
-
-.hide {
-  display: none !important; }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .section {
+    font-size: 2em !important; } }
 
 /*# sourceMappingURL=style.css.map */
